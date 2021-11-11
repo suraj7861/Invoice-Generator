@@ -2,15 +2,15 @@ package com.invoice;
 
 public class InvoiceGenerator {
 	// variable declare and assign
-	private int costPerTime = 1;
-	private double minimumCostPerKilometer = 10;
-	private double minimumFare = 5;
+	private static final int COST_PER_TIME = 1;
+	private static final double MINIMUM_COST_PER_KILOMETER = 10;
+	private static final double MINIMUM_FARE = 5;
 
 	// method: calculate fare
 	public double calculateFare(double distance, int time) {
-		double totalFare = distance * minimumCostPerKilometer + time * costPerTime;
-		if (totalFare < minimumFare) {
-			return minimumFare;
+		double totalFare = distance * MINIMUM_COST_PER_KILOMETER + time * COST_PER_TIME;
+		if (totalFare < MINIMUM_FARE) {
+			return MINIMUM_FARE;
 		}
 		return totalFare;
 	}
